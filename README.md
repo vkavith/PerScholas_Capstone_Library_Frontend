@@ -57,7 +57,7 @@ Digital Library Management System to have a seamless interaction to access the L
       + Display books based on Category, Display book based on the Book Name/Title
  
 ## Do you have a third party API?
-      + My College mate is a founder of toolo.in, it's a children's online Library, where the books get delivered at doorstep. She is the co-owner of this company. She told me the App is in MEAN stack, I was curious in full stack web dev from then on, thanks to Per Scholas! I can talk to her about the MERN stack Library App and see how it goes.
+  + My College mate is a founder of toolo.in, it's a children's online Library, where the books get delivered at doorstep. She is the co-owner of this company. She told me the App is in MEAN stack, I was curious in full stack web dev from then on, thanks to Per Scholas! I can talk to her about the MERN stack Library App and see how it goes.
 
 
 ## Wireframe - I will email, it is hand-written
