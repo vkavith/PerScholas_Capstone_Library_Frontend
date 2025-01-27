@@ -43,7 +43,7 @@ Digital Library Management System to have a seamless interaction to access the L
    + dueDate
    + returnDate
    + status [issued, returned]
- 
+
 + What are your 4 pages? (How will you create FULL CRUD on the Front End)
    + Home page
       + Login , Register
@@ -56,7 +56,7 @@ Digital Library Management System to have a seamless interaction to access the L
    + Collection
       + Display books based on Category, Display book based on the Book Name/Title
  
- + Do you have a third party API?
++ Do you have a third party API?
       + My College mate is a founder of toolo.in, it's a children's online Library, where the books get delivered at doorstep. She is the co-owner of this company. She told me the App is in MEAN stack, I was curious in full stack web dev from then on, thanks to Per Scholas! I can talk to her about the MERN stack Library App and see how it goes.
 
 
