@@ -1,4 +1,9 @@
 .collection {
+  display: flex;
+}
+
+.collection-content {
+  flex: 1;
   padding: 20px;
 }
 

@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Sidebar from './Sidebar';
 import './BookCollection.css';
 
 function Collection() {
@@ -16,17 +17,19 @@ function Collection() {
 
   return (
     <div className="collection">
-      <h1>Book Collection</h1>
-      <div className="books-grid">
-        {books.map(book => (
-          <div key={book._id} className="book-card">
-            <img src={book.imageUrl} alt={book.bookName} />
-            <h3>{book.bookName}</h3>
-            <p>{book.author}</p>
-            <p>Stock: {book.stock}</p>
-            <p>Genre: {book.category}</p>
-          </div>
-        ))}
+      <Sidebar />
+      <div className="collection-content">
+        <h1>Book Collection</h1>
+        <div className="books-grid">
+          {books.map(book => (
+            <div key={book._id} className="book-card">
+              <img src={book.imageUrl} alt={book.bookName} />
+              <h3>{book.bookName}</h3>
+              <p>{book.author}</p>
+              <p>Stock: {book.stock}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

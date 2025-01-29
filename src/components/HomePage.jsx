@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Sidebar from './Sidebar';
 import "./HomePage.css";
 
 function HomePage() {
@@ -14,20 +15,15 @@ function HomePage() {
   //  fetchBooks();
  // }, []);
 
-  return (
+ return (
     <div className="home">
-      <div className="left-panel">
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/add" className="nav-link">Add Book</Link>
-        <Link to="/edit" className="nav-link">Edit Book</Link>
-        <Link to="/delete" className="nav-link">Delete Book</Link>
-        <Link to="/collection" className="nav-link">Collection</Link>
-      </div>
-
+      <Sidebar />
       <div className="main-content">
         <h1>Library Management System</h1>
         <p className="subtitle">Your digital gateway to knowledge</p>
-
+      </div>
+    </div>
+  );
       {/*  <div className="books-grid">
           {books.map((book) => (
             <div key={book._id} className="book-card">
@@ -37,10 +33,7 @@ function HomePage() {
               <p>Stock: {book.stock}</p>
           </div> 
           ))} */}
-        </div>
-      </div>
-    
-  );
+      
 }
 
 export default HomePage;

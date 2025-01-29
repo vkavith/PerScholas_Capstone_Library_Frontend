@@ -1,7 +1,7 @@
 .home {
   display: flex;
 }
-
+/*
 .left-panel {
   width: 200px;
   background-color: #000;
@@ -18,7 +18,7 @@
 .nav-link:hover {
   color: #ccc;
 }
-
+*/
 .main-content {
   flex: 1;
   padding: 20px;
