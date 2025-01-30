@@ -10,7 +10,9 @@ function Collection() {
 
   useEffect(() => {
     const fetchBooks = async () => {
-      const { data } = await axios.get("http://localhost:5000/api/books");
+      const { data } = await axios.get(
+        "https://perscholas-capstone-library-backend.onrender.com/api/books"
+      );
       setBooks(data);
     };
     fetchBooks();
@@ -23,7 +25,7 @@ function Collection() {
   const handleSearch = async () => {
     try {
       const data = await axios.get(
-        `http://localhost:5000/api/books/search?q=${searchQuery}`
+        `https://perscholas-capstone-library-backend.onrender.com/api/books/search?q=${searchQuery}`
       );
       setSearchResult(data);
     } catch (error) {
@@ -52,7 +54,6 @@ function Collection() {
             value={searchBook}
             onChange={handleSearchChange}
           />
-          
         </div>
 
         {searchResult ? (
