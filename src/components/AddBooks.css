@@ -1,0 +1,71 @@
+.add-book-page {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .bookinfo {
+    flex: 1;
+    padding: 20px;  /* reduced from 30px */
+    background-color: #f5f6fa;
+  }
+  
+  .header {
+    margin-bottom: 20px;  /* reduced from 30px */
+  }
+  
+  .header h1 {
+    font-size: 20px;  /* reduced from 24px */
+    color: #2c3e50;
+    margin-bottom: 5px;  /* reduced from 8px */
+  }
+  
+  .header p {
+    color: #7f8c8d;
+    font-size: 14px;  /* reduced from 16px */
+  }
+  
+  .form-container {
+    background: white;
+    padding: 20px;  /* reduced from 30px */
+    border-radius: 6px;  /* reduced from 8px */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;  /* reduced from 600px */
+    margin: 0 auto;  /* center the form */
+  }
+  
+  .form-field {
+    margin-bottom: 15px;  /* reduced from 20px */
+  }
+  
+  .form-field label {
+    display: block;
+    margin-bottom: 5px;  /* reduced from 8px */
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .form-field input {
+    width: 100%;
+    padding: 8px;  /* reduced from 10px */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;  /* reduced from 14px */
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 10px;  /* reduced from 12px */
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;  /* reduced from 16px */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submit-button:hover {
+    background: #2980b9;
+  }

@@ -63,6 +63,7 @@ function Collection() {
               <h3>{searchResult.bookName}</h3>
               <p>{searchResult.author}</p>
               <p>Stock: {searchResult.stock}</p>
+              <p>Genre: "</p>
             </div>
           </div>
         ) : (
