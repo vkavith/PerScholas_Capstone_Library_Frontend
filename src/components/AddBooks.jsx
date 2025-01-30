@@ -102,7 +102,7 @@ function AddBook() {
             </div>
 
             <div className="form-field">
-              <label>Category</label>
+              <label>Genre</label>
               <input
                 type="text"
                 value={bookData.category}
