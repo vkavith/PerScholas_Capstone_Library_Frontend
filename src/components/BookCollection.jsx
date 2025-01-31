@@ -11,7 +11,8 @@ function Collection() {
   useEffect(() => {
     const fetchBooks = async () => {
       const { data } = await axios.get(
-        "https://perscholas-capstone-library-backend.onrender.com/api/books"
+        "http://localhost:5000/api/books"
+        //   "https://perscholas-capstone-library-backend.onrender.com/api/books"
       );
       setBooks(data);
     };
@@ -25,7 +26,8 @@ function Collection() {
   const handleSearch = async () => {
     try {
       const data = await axios.get(
-        `https://perscholas-capstone-library-backend.onrender.com/api/books/search?q=${searchQuery}`
+        `http://localhost:5000/api/books/search?q=${searchQuery}`
+        // `https://perscholas-capstone-library-backend.onrender.com/api/books/search?q=${searchQuery}`
       );
       setSearchResult(data);
     } catch (error) {
@@ -35,11 +37,11 @@ function Collection() {
   };
 
   const filteredBook = books.filter((book) => {
-    const matchesQuery = book.bookName
+    const matchQuery = book.bookName
       .toLowerCase()
       .includes(searchBook.toLowerCase());
 
-    return matchesQuery;
+    return matchQuery;
   });
 
   return (
@@ -62,9 +64,10 @@ function Collection() {
             <div className="book-card">
               <img src={searchResult.imageUrl} alt={searchResult.bookName} />
               <h3>{searchResult.bookName}</h3>
+              <p className="isbn">ISBN: {searchResult.isbn}</p>
               <p>{searchResult.author}</p>
               <p>Stock: {searchResult.stock}</p>
-              <p>Genre: "</p>
+              <p>Genre: {searchResult.category}</p>
             </div>
           </div>
         ) : (
@@ -73,8 +76,10 @@ function Collection() {
               <div key={book._id} className="book-card">
                 <img src={book.imageUrl} alt={book.bookName} />
                 <h3>{book.bookName}</h3>
+                <p className="isbn">ISBN: {book.isbn}</p>
                 <p>{book.author}</p>
                 <p>Stock: {book.stock}</p>
+                <p>Genre: {book.category}</p>
               </div>
             ))}
           </div>
