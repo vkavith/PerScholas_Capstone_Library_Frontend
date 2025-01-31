@@ -83,7 +83,7 @@ function EditBook() {
            ))}
          </select>
        </div>
-
+       
        {selectedBook && (
          <div className="form-container">
            <form onSubmit={handleSubmit}>
@@ -91,7 +91,7 @@ function EditBook() {
                <label>Book Name</label>
                <input
                  type="text"
-                 value={selectedBook.bookName}
+                 value={selectedBook.bookName}   {/* Book Name is primary key, greyed out, just for display */}
                  disabled
                  className="disabled-input"
                />
@@ -101,7 +101,7 @@ function EditBook() {
                <label>ISBN</label>
                <input
                  type="text"
-                 value={selectedBook.isbn}
+                 value={selectedBook.isbn}  {/* ISBN is primary key, greyed out, just for display */}
                  disabled
                  className="disabled-input"
                />
