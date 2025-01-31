@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
 //import HomePage from "./components/HomePage";
 import AddBooks from "./components/AddBooks.jsx";
-//import EditBooks from "./components/EditBooks.jsx";
+import EditBooks from "./components/EditBooks.jsx";
 //import DeleteBooks from "./components/DeleteBooks";
 import Collection from "./components/BookCollection";
 
@@ -17,8 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/add" element={<AddBooks />} />
-       {/*   <Route path="/edit" element={<EditBooks />} />
-          <Route path="/delete" element={<DeleteBooks />} />*/}
+          <Route path="/edit" element={<EditBooks />} />
+          {/*}   <Route path="/delete" element={<DeleteBooks />} />*/}
           <Route path="/collection" element={<Collection />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
