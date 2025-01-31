@@ -12,6 +12,42 @@ function EditBooks() {
     stock: 0,
   });
 
+  // Fetch all books on component mount
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const { data } = await axios.get("http://localhost:5000/api/books");
+        setBooks(data);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+    fetchBooks();
+  }, []);
+
+  const handleBookSelect = (book) => {
+    setSelectedBook(book);
+    setEditData({
+      author: book.author,
+      category: book.category,
+      stock: book.stock,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.put(`http://localhost:5000/api/books/${selectedBook._id}`, {
+        ...selectedBook,
+        ...editData,
+      });
+      alert("Book updated successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error updating book");
+    }
+  };
+
   return (
     <div className="edit-book-page">
       <Sidebar />
@@ -29,7 +65,8 @@ function EditBooks() {
                 ? books.findIndex((b) => b._id === selectedBook._id)
                 : ""
             }
-            className="book-select">
+            className="book-select"
+          >
             <option value="">Select a book</option>
             {books.map((book, index) => (
               <option key={book._id} value={index}>
