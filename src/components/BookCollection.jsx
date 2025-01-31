@@ -2,19 +2,24 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
 import "./BookCollection.css";
+import API from "../api/config";
+//import { useContext } from 'react';
+//import {APIContext} from '../context/apiContext'
 
 function Collection() {
   const [books, setBooks] = useState([]);
   const [searchBook, setSearchBook] = useState("");
   const [searchResult, setSearchResult] = useState(null);
-
+  //console.log(API);
   useEffect(() => {
     const fetchBooks = async () => {
-      const { data } = await axios.get(
-        "http://localhost:5000/api/books"
+      const res = await axios.get(
+        `${API}/api/books`
         //   "https://perscholas-capstone-library-backend.onrender.com/api/books"
       );
-      setBooks(data);
+
+      //const data = await.get("/api/books");
+      setBooks(res.data);
     };
     fetchBooks();
   }, []);
@@ -25,11 +30,13 @@ function Collection() {
 
   const handleSearch = async () => {
     try {
-      const data = await axios.get(
-        `http://localhost:5000/api/books/search?q=${searchQuery}`
+      const res = await axios.get(
+        //  `http://localhost:5000/api/books/search?q=${searchQuery}`
         // `https://perscholas-capstone-library-backend.onrender.com/api/books/search?q=${searchQuery}`
+        `${API}/api/books/search?q=${searchQuery}`
       );
-      setSearchResult(data);
+      // const data = await API.get(`/api/books/search?q=${searchQuery}`);
+      setSearchResult(res.data);
     } catch (error) {
       console.error("Error searching for book:", error);
       setSearchResult(null);

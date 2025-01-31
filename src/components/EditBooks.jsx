@@ -91,7 +91,7 @@ function EditBook() {
                <label>Book Name</label>
                <input
                  type="text"
-                 value={selectedBook.bookName}   {/* Book Name is primary key, greyed out, just for display */}
+                 value={selectedBook.bookName}   
                  disabled
                  className="disabled-input"
                />
@@ -101,7 +101,7 @@ function EditBook() {
                <label>ISBN</label>
                <input
                  type="text"
-                 value={selectedBook.isbn}  {/* ISBN is primary key, greyed out, just for display */}
+                 value={selectedBook.isbn}  
                  disabled
                  className="disabled-input"
                />

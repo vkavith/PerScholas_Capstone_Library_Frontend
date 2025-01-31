@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
 import "./AddBooks.css";
+import API from "../api/config";
 
 function AddBook() {
   const [bookData, setBookData] = useState({
@@ -17,10 +18,12 @@ function AddBook() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data: books } = await axios.get(
-        "http://localhost:5000/api/books"
+     // const { data: books } = await axios.get(
+      //  "http://localhost:5000/api/books"
+      const { data} = await axios.get(
+      `${API}/api/books`
       );
-      const existingBook = books.find((book) => book.isbn === bookData.isbn);
+      const existingBook = data.find((book) => book.isbn === bookData.isbn);
 
       if (existingBook) {
         const updatedBook = {
