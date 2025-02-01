@@ -1,0 +1,71 @@
+.delete-book-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.bookinfo {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f6fa;
+}
+
+.book-selection {
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.book-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-details {
+  margin-bottom: 20px;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row label {
+  font-weight: 500;
+  width: 120px;
+  color: #666;
+}
+
+.detail-row span {
+  flex: 1;
+  color: #2c3e50;
+}
+
+.delete-button {
+  width: 100%;
+  padding: 12px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.delete-button:hover {
+  background: #c0392b;
+}
