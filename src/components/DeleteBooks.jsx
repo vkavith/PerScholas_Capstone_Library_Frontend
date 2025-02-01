@@ -25,7 +25,24 @@ function DeleteBook() {
     setSelectedBook(book);
   };
 
-  const handleDelete = async () => {};
+  const handleDelete = async () => {
+    if (window.confirm("Do you want to delete this book?")) {
+      try {
+        await axios.delete(`${API}/api/books/${selectedBook._id}`);
+        alert("Book deleted successfully!");
+
+        // Refresh book list
+        const { data } = await axios.get(`${API}/api/books`);
+        setBooks(data);
+
+        // Reset selection
+        setSelectedBook(null);
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Error deleting book");
+      }
+    }
+  };
 
   return (
     <div className="delete-book-page">
