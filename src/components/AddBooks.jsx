@@ -18,11 +18,9 @@ function AddBook() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-     // const { data: books } = await axios.get(
+      // const { data: books } = await axios.get(
       //  "http://localhost:5000/api/books"
-      const { data} = await axios.get(
-      `${API}/api/books`
-      );
+      const {data} = await axios.get(`${API}/api/books`);
       const existingBook = data.find((book) => book.isbn === bookData.isbn);
 
       if (existingBook) {
@@ -30,13 +28,11 @@ function AddBook() {
           ...existingBook,
           stock: existingBook.stock + parseInt(bookData.stock),
         };
-        await axios.put(
-          `http://localhost:5000/api/books/${existingBook._id}`,
-          updatedBook
-        );
+
+        await axios.put(`${API}/api/books/${existingBook._id}`, updatedBook);
         alert("Book stock updated successfully!");
       } else {
-        await axios.post("http://localhost:5000/api/books", bookData);
+        await axios.post(`${API}/api/books`, bookData);
         alert("New book added successfully!");
       }
 
