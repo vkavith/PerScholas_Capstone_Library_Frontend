@@ -44,7 +44,25 @@
   background-color: white;
 }
 
+.message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+}
 
+.message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.message.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
 
 button {
   width: 100%;
@@ -77,5 +95,8 @@ option:disabled {
   .issue-content {
     padding: 10px;
   }
-  
+
+  .issue-form {
+    margin: 10px;
+  }
 }
