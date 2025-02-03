@@ -7,11 +7,11 @@ import "./IssueBooks.css";
 function IssueBook() {
   const [books, setBooks] = useState([]);
   const [users, setUsers] = useState([]);
-  const [selectedBook, setSelectedBook] = useState();
-  const [selectedUser, setSelectedUser] = useState();
-  const [message, setMessage] = useState();
-  const [bookInfo, setBookInfo] = useState();
-
+  const [selectedBook, setSelectedBook] = useState('');
+  const [selectedUser, setSelectedUser] = useState('');
+  const [message, setMessage] = useState('');
+  const [bookInfo, setBookInfo] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
     if (message) {
@@ -47,16 +47,27 @@ function IssueBook() {
     fetchUsers();
   }, []);
 
-
-  const handleBookSelect = (e) => {
+  const handleBookDetail = (e) => {
     const bookId = e.target.value;
     setSelectedBook(bookId);
-    
+
     if (bookId) {
-      const selectedBookDetails = books.find(book => book._id === bookId);
+      const selectedBookDetails = books.find((book) => book._id === bookId);
       setBookInfo(selectedBookDetails);
     } else {
       setBookInfo(null);
+    }
+  };
+
+  const handleUserDetail = (e) => {
+    const userId = e.target.value;
+    setSelectedUser(userId);
+
+    if (userId) {
+      const selectedUserDetails = users.find((user) => user._id === userId);
+      setUserInfo(selectedUserDetails);
+    } else {
+      setUserInfo(null);
     }
   };
 
@@ -77,10 +88,10 @@ function IssueBook() {
 
       if (response.data) {
         setMessage("Book issued successfully!");
-        setSelectedBook("");
-        setSelectedUser("");
-        setBookInfo();
-
+        setSelectedBook('');
+        setSelectedUser('');
+        setBookInfo(null);
+        setUserInfo(null);
         // Refresh book list to update stock
         const bookResponse = await axios.get(`${API}/api/books`);
         setBooks(bookResponse.data);
@@ -106,8 +117,8 @@ function IssueBook() {
             <label>Select Book</label>
             <select
               value={selectedBook}
-              onChange={handleBookSelect}
-            //   onChange={(e) => setSelectedBook(e.target.value)}
+              onChange={handleBookDetail}
+              //   onChange={(e) => setSelectedBook(e.target.value)}
               required
             >
               <option value="">Select a book</option>
@@ -124,7 +135,6 @@ function IssueBook() {
             </select>
           </div>
 
-
           {bookInfo && (
             <div className="book-details">
               <h3>Book Detailed Information</h3>
@@ -136,12 +146,12 @@ function IssueBook() {
             </div>
           )}
 
-
           <div className="form-group">
             <label>Select User:</label>
             <select
               value={selectedUser}
-              onChange={(e) => setSelectedUser(e.target.value)}
+              onChange={handleUserDetail}
+              //onChange={(e) => setSelectedUser(e.target.value)}
               required
             >
               <option value="">Select a user</option>
@@ -152,6 +162,14 @@ function IssueBook() {
               ))}
             </select>
           </div>
+
+          {userInfo && (
+            <div className="user-details">
+              <h3>Confirm User  Information</h3>
+              <p>User Name: {userInfo.username}</p>
+              <p>Email: {userInfo.email}</p>
+            </div>
+          )}
 
           {message && (
             <div
