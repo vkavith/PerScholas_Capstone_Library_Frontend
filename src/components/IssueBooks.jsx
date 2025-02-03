@@ -7,15 +7,17 @@ import "./IssueBooks.css";
 function IssueBook() {
   const [books, setBooks] = useState([]);
   const [users, setUsers] = useState([]);
-  const [selectedBook, setSelectedBook] = useState("");
-  const [selectedUser, setSelectedUser] = useState("");
-  const [message, setMessage] = useState("");
+  const [selectedBook, setSelectedBook] = useState();
+  const [selectedUser, setSelectedUser] = useState();
+  const [message, setMessage] = useState();
+  const [bookInfo, setBookInfo] = useState();
+
 
   useEffect(() => {
     if (message) {
       const timer = setTimeout(() => {
         setMessage("");
-      }, 1000);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -45,6 +47,19 @@ function IssueBook() {
     fetchUsers();
   }, []);
 
+
+  const handleBookSelect = (e) => {
+    const bookId = e.target.value;
+    setSelectedBook(bookId);
+    
+    if (bookId) {
+      const selectedBookDetails = books.find(book => book._id === bookId);
+      setBookInfo(selectedBookDetails);
+    } else {
+      setBookInfo(null);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -64,6 +79,7 @@ function IssueBook() {
         setMessage("Book issued successfully!");
         setSelectedBook("");
         setSelectedUser("");
+        setBookInfo();
 
         // Refresh book list to update stock
         const bookResponse = await axios.get(`${API}/api/books`);
@@ -87,10 +103,11 @@ function IssueBook() {
 
         <form onSubmit={handleSubmit} className="issue-form">
           <div className="form-group">
-            <label>Select Book:</label>
+            <label>Select Book</label>
             <select
               value={selectedBook}
-              onChange={(e) => setSelectedBook(e.target.value)}
+              onChange={handleBookSelect}
+            //   onChange={(e) => setSelectedBook(e.target.value)}
               required
             >
               <option value="">Select a book</option>
@@ -106,6 +123,19 @@ function IssueBook() {
               ))}
             </select>
           </div>
+
+
+          {bookInfo && (
+            <div className="book-details">
+              <h3>Book Detailed Information</h3>
+              <p>Book Name: {bookInfo.bookName}</p>
+              <p>ISBN: {bookInfo.isbn}</p>
+              <p>Author: {bookInfo.author}</p>
+              <p>Category: {bookInfo.category}</p>
+              <p>Available Stock: {bookInfo.stock}</p>
+            </div>
+          )}
+
 
           <div className="form-group">
             <label>Select User:</label>
