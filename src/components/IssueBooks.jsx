@@ -11,7 +11,17 @@ function IssueBook() {
   const [selectedUser, setSelectedUser] = useState("");
   const [message, setMessage] = useState("");
 
-  // Fetch books and users on component mount
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage("");
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
+
+  // Fetch all books and all users
   useEffect(() => {
     const fetchBooks = async () => {
       try {
