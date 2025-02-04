@@ -77,8 +77,8 @@ function ReturnBooks() {
           isbn: transaction.book.isbn,
           author: transaction.book.author,
           category: transaction.book.category,
-          issueDate: new Date(transaction.issueDate),
-          dueDate: new Date(transaction.dueDate),
+          issueDate: new Date(transaction.issueDate).toLocaleDateString(),
+          dueDate: new Date(transaction.dueDate).toLocaleDateString(),
         });
       }
     } else {
