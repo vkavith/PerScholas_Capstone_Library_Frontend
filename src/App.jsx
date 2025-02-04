@@ -7,6 +7,7 @@ import AddBooks from "./components/AddBooks.jsx";
 import EditBooks from "./components/EditBooks.jsx";
 import DeleteBooks from "./components/DeleteBooks";
 import IssueBooks from "./components/IssueBooks";
+import ReturnBooks from "./components/ReturnBooks";
 import Collection from "./components/BookCollection";
 
 import "./App.css";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/edit" element={<EditBooks />} />
           <Route path="/delete" element={<DeleteBooks />} />
           <Route path="/issue" element={<IssueBooks />} />
+          <Route path="/return" element={<ReturnBooks />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
