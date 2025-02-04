@@ -16,6 +16,7 @@
   font-size: 18px; /* Increase the font size in SideBar Panel */
 }
 
+
 .nav-link:hover {
   color: rgb(0, 208, 255); /* Change the hover color to light blue */
 }
