@@ -3,8 +3,6 @@ import axios from "axios";
 import Sidebar from "./Sidebar";
 import "./BookCollection.css";
 import API from "../api/config";
-//import { useContext } from 'react';
-//import {APIContext} from '../context/apiContext'
 
 function Collection() {
   const [books, setBooks] = useState([]);
@@ -18,7 +16,6 @@ function Collection() {
         //   "https://perscholas-capstone-library-backend.onrender.com/api/books"
       );
 
-      //const data = await.get("/api/books");
       setBooks(res.data);
     };
     fetchBooks();

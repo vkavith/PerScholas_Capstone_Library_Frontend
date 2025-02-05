@@ -11,6 +11,7 @@ function EditBook() {
     author: "",
     category: "",
     stock: 0,
+    imageUrl: "",
   });
 
   // Fetch all books
@@ -32,6 +33,7 @@ function EditBook() {
       author: book.author,
       category: book.category,
       stock: book.stock,
+      imageUrl: book.imageUrl,
     });
   };
 
@@ -54,6 +56,7 @@ function EditBook() {
         author: "",
         category: "",
         stock: 0,
+        imageUrl: "",
       });
     } catch (error) {
       console.error("Error:", error);
@@ -149,6 +152,20 @@ function EditBook() {
                   }
                   required
                   min="0"
+                />
+              </div>
+
+              <div className="form-field">
+                <label>imageUrl</label>
+                <input
+                  type="text"
+                  value={editData.imageUrl}
+                  onChange={(e) =>
+                    setEditData({
+                      ...editData,
+                      imageUrl: e.target.value,
+                    })
+                  }
                 />
               </div>
 
