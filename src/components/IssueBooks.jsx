@@ -1,4 +1,5 @@
 // IssueBook component for managing book lending
+// src/components/IssueBooks.jsx
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
@@ -6,14 +7,15 @@ import API from "../api/config";
 import "./IssueBooks.css";
 
 function IssueBook() {
-  const [books, setBooks] = useState([]);
-  const [users, setUsers] = useState([]);
+  const [books, setBooks] = useState([]);   // Available books
+  const [users, setUsers] = useState([]);   // Registered users
   const [selectedBook, setSelectedBook] = useState('');
   const [selectedUser, setSelectedUser] = useState('');
-  const [message, setMessage] = useState('');
-  const [bookInfo, setBookInfo] = useState(null);
-  const [userInfo, setUserInfo] = useState(null);
+  const [message, setMessage] = useState('');     // Status messages
+  const [bookInfo, setBookInfo] = useState(null); // Selected book details
+  const [userInfo, setUserInfo] = useState(null);  // Selected user details
 
+  // Clear messages after timeout
   useEffect(() => {
     if (message) {
       const timer = setTimeout(() => {
@@ -48,6 +50,7 @@ function IssueBook() {
     fetchUsers();
   }, []);
 
+  // Update book details when selection changes
   const handleBookDetail = (e) => {
     const bookId = e.target.value;
     setSelectedBook(bookId);
@@ -60,6 +63,7 @@ function IssueBook() {
     }
   };
 
+  // Update user details when selection changes 
   const handleUserDetail = (e) => {
     const userId = e.target.value;
     setSelectedUser(userId);
@@ -72,6 +76,7 @@ function IssueBook() {
     }
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -87,6 +92,7 @@ function IssueBook() {
         user: selectedUser,
       });
 
+      // Reset form and refresh books
       if (response.data) {
         setMessage("Book issued successfully!");
         setSelectedBook('');
@@ -113,7 +119,9 @@ function IssueBook() {
       <div className="issue-content">
         <h1>Issue Book</h1>
 
+        {/* Book issuing form */}
         <form onSubmit={handleSubmit} className="issue-form">
+          {/* Book selection dropdown */}
           <div className="form-group">
             <label>Select Book</label>
             <select
@@ -136,6 +144,7 @@ function IssueBook() {
             </select>
           </div>
 
+           {/* Show selected book details */}
           {bookInfo && (
             <div className="book-details">
               <h3>Book Detailed Information</h3>
@@ -147,6 +156,7 @@ function IssueBook() {
             </div>
           )}
 
+          {/* User selection dropdown */}
           <div className="form-group">
             <label>Select User:</label>
             <select
@@ -164,6 +174,7 @@ function IssueBook() {
             </select>
           </div>
 
+          {/* Show selected user details */}
           {userInfo && (
             <div className="user-details">
               <h3>Confirm User  Information</h3>
@@ -172,6 +183,7 @@ function IssueBook() {
             </div>
           )}
 
+           {/* Status message display */}
           {message && (
             <div
               className={`message ${
