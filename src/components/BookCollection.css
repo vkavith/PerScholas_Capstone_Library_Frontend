@@ -25,25 +25,6 @@
   padding: 8px;
   font-size: 16px;
 }
-/*
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-}
-
-.book-card {
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.book-card img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}*/
 
 .book-card h3 {
   font-size: 18px;

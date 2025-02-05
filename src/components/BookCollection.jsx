@@ -8,7 +8,7 @@ function Collection() {
   const [books, setBooks] = useState([]);
   const [searchBook, setSearchBook] = useState("");
   const [searchResult, setSearchResult] = useState(null);
-  //console.log(API);
+  
   useEffect(() => {
     const fetchBooks = async () => {
       const res = await axios.get(

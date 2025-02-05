@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-//import { useState, useEffect } from "react";
 import HomePage from "./components/HomePage";
-//import HomePage from "./components/HomePage";
 import AddBooks from "./components/AddBooks.jsx";
 import EditBooks from "./components/EditBooks.jsx";
 import DeleteBooks from "./components/DeleteBooks";

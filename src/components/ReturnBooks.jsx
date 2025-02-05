@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
@@ -97,6 +95,14 @@ function ReturnBooks() {
       return;
     }
 
+    // Validate return date
+    if (new Date(returnDate) <= new Date(bookInfo.issueDate)) {
+      setMessage(
+        "Return date cannot be earlier than or equal to the issue date"
+      );
+      return;
+    }
+
     try {
       const response = await axios.post(`${API}/api/returntransactions`, {
         transactionId: selectedTransaction,
@@ -129,8 +135,7 @@ function ReturnBooks() {
     }
   };
 
-
-return (
+  return (
     <div className="return-book-page">
       <Sidebar />
       <div className="return-content">
@@ -139,11 +144,7 @@ return (
         <form onSubmit={handleSubmit} className="return-form">
           <div className="form-group">
             <label>Select User:</label>
-            <select
-              value={selectedUser}
-              onChange={handleUserInfo}
-              required
-            >
+            <select value={selectedUser} onChange={handleUserInfo} required>
               <option value="">Select a user</option>
               {users.map((user) => (
                 <option key={user._id} value={user._id}>
