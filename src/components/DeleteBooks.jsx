@@ -1,4 +1,5 @@
 // src/components/DeleteBooks.jsx
+// Component for managing book deletion functionality
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
@@ -6,9 +7,11 @@ import "./DeleteBooks.css";
 import API from "../api/config";
 
 function DeleteBook() {
+  // State management for books list and selected book
   const [books, setBooks] = useState([]);
   const [selectedBook, setSelectedBook] = useState(null);
-
+  
+  //Fetch Books
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -21,17 +24,19 @@ function DeleteBook() {
     fetchBooks();
   }, []);
 
+  // Handle book selection from dropdown
   const handleBookSelect = (book) => {
     setSelectedBook(book);
   };
 
+  // Handle book deletion with confirmation
   const handleDelete = async () => {
     if (window.confirm("Do you want to delete this book?")) {
       try {
         await axios.delete(`${API}/api/books/${selectedBook._id}`);
         alert("Book deleted successfully!");
 
-        // Refresh book list
+        // Refresh book list after deletion
         const { data } = await axios.get(`${API}/api/books`);
         setBooks(data);
 
@@ -53,6 +58,7 @@ function DeleteBook() {
           <p>Select a book to delete from collection</p>
         </div>
 
+        {/* Book selection dropdown */}
         <div className="book-selection">
           <select
             onChange={(e) => handleBookSelect(books[e.target.value])}
@@ -72,6 +78,7 @@ function DeleteBook() {
           </select>
         </div>
 
+        {/* Book details display */}
         {selectedBook && (
           <div className="form-container">
             <div className="book-details">

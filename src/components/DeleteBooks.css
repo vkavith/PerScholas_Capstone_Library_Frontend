@@ -1,3 +1,4 @@
+/* Main layout container */
 .delete-book-page {
   display: flex;
   min-height: 100vh;
@@ -8,12 +9,12 @@
   padding: 20px;
   background-color: #f5f6fa;
 }
-
+/* Book dropdown container */
 .book-selection {
   max-width: 600px;
   margin: 0 auto 20px;
 }
-
+/* Dropdown select styling */
 .book-select {
   width: 100%;
   padding: 10px;
@@ -22,6 +23,7 @@
   font-size: 14px;
 }
 
+/* Book details card container */
 .form-container {
   max-width: 600px;
   margin: 0 auto;
@@ -52,20 +54,20 @@
   flex: 1;
   color: #2c3e50;
 }
-
+/* Delete button styling */
 .delete-button {
-    width: 100%;
-    padding: 12px;
-    background: #e74c3c;
-    color: white;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background 0.3s;
-  }
-  
-  .delete-button:hover {
-    background: #c0392b;
-  }
+  width: 100%;
+  padding: 12px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+/* Delete button hover state */
+.delete-button:hover {
+  background: #c0392b;
+}

@@ -1,32 +1,32 @@
+/* Main layout container */
 .edit-book-page {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  .bookinfo {
-    flex: 1;
-    padding: 20px;
-    background-color: #f5f6fa;
-  }
-  
-  .book-selection {
-    /*margin-bottom: 20px;*/
-    max-width: 600px;  
-    margin: 0 auto 20px;
-  }
-  
-  .book-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  
-  .disabled-input {
-    background-color: #f5f5f5;
-    color: #666;
-    cursor: not-allowed;
-  }
-  
+  display: flex;
+  min-height: 100vh;
+}
+/* Content area styling */
+.bookinfo {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f6fa;
+}
+/* Book selection dropdown wrapper */
+.book-selection {
+  /*margin-bottom: 20px;*/
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+/* Dropdown select element */
+.book-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+/* Disabled input fields */
+.disabled-input {
+  background-color: #f5f5f5;
+  color: #666;
+  cursor: not-allowed;
+}

@@ -1,3 +1,4 @@
+// Edit Book component for managing book information
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
@@ -5,8 +6,11 @@ import "./EditBooks.css";
 import API from "../api/config";
 
 function EditBook() {
+  // State for books list and selected book
   const [books, setBooks] = useState([]);
   const [selectedBook, setSelectedBook] = useState(null);
+
+  // State for editable fields
   const [editData, setEditData] = useState({
     author: "",
     category: "",
@@ -27,6 +31,7 @@ function EditBook() {
     fetchBooks();
   }, []);
 
+  // Update form data when book is selected
   const handleBookSelect = (book) => {
     setSelectedBook(book);
     setEditData({
@@ -37,6 +42,7 @@ function EditBook() {
     });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -64,9 +70,11 @@ function EditBook() {
     }
   };
 
+  // Render component
   return (
     <div className="edit-book-page">
       <Sidebar />
+      {/* Book selection dropdown */}
       <div className="bookinfo">
         <div className="header">
           <h1>Edit Book</h1>
@@ -92,9 +100,11 @@ function EditBook() {
           </select>
         </div>
 
+        {/* Edit form */}
         {selectedBook && (
           <div className="form-container">
             <form onSubmit={handleSubmit}>
+              {/* Read-only fields */}
               <div className="form-field">
                 <label>Book Name</label>
                 <input
@@ -104,7 +114,7 @@ function EditBook() {
                   className="disabled-input"
                 />
               </div>
-
+              {/* Read-only fields */}
               <div className="form-field">
                 <label>ISBN</label>
                 <input
