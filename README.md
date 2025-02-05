@@ -23,21 +23,23 @@ Digital Library Management System to have a seamless interaction to access the L
 
 ## How will you model your data? (Schema) What is the data you are CRUD ing?
 + Books
-+ User
-+ Transaction
++ Users
++ Transactions
 
 + Books data model
   + bookName
-  + ISBN
+  + isbn
   + author
-  + stock
   + category
+  + stock
+  + imageURL
    
 + User data model
   + username
   + email
   + password
-  + role [admin, user]
+  + isAdmin
+  
  
 + Transaction
    + book { ref: 'Book'}
