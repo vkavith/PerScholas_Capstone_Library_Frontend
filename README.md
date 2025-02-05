@@ -51,18 +51,22 @@ Digital Library Management System to have a seamless interaction to access the L
 
 ## What are your 4 pages? (How will you create FULL CRUD on the Front End)
    + Home page
-      + Login , Register
+      + Welcome page
    + Add Book
       + Add Books to the Library Catalog
    + Edit Book
       + Edit Book Details in the Library Catalog
    + Delete Book
-      + Delete one or multiple books of the same BookName
+      + Delete a BookName from the Library Catalog
+   + Issue Book
+      + Issue Book to a User, display error message if the same book issued again. Book stock decreased to 1 after issue
+   + Return Book
+      + Return Book to the Library Catalog from the User, Book stock increased to 1 after return      
    + Collection
-      + Display books based on Category, Display book based on the Book Name/Title
+      + Display entire books from the Library Catalog. User has the option to search for 1 book
  
 ## Do you have a third party API?
-  + My College mate is a founder of toolo.in, it's a children's online Library, where the books get delivered at doorstep. She is the co-owner of this company. She told me the App is in MEAN stack, I was curious in full stack web dev from then on, thanks to Per Scholas! I can talk to her about the MERN stack Library App and see how it goes.
+  + Google Books API was used to get the Book Images URL, also to refresh the Book Images URL from Google Books API in the code.
 
 
 ## Wireframe - I will email, it is hand-written
