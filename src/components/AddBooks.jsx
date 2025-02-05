@@ -1,4 +1,4 @@
-// src/components/AddBook.jsx
+// src/components/AddBooks.jsx
 import { useState } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
@@ -6,6 +6,7 @@ import "./AddBooks.css";
 import API from "../api/config";
 
 function AddBook() {
+  // State to manage book input fields
   const [bookData, setBookData] = useState({
     bookName: "",
     isbn: "",
@@ -15,15 +16,18 @@ function AddBook() {
     imageUrl: "",
   });
 
+  // Handle form submission for adding new books or adding stock to existing book
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // const { data: books } = await axios.get(
       //  "http://localhost:5000/api/books"
-      const {data} = await axios.get(`${API}/api/books`);
+      // Check if book already exists in the database
+      const { data } = await axios.get(`${API}/api/books`);
       const existingBook = data.find((book) => book.isbn === bookData.isbn);
 
       if (existingBook) {
+        // If book exists, update its stock
         const updatedBook = {
           ...existingBook,
           stock: existingBook.stock + parseInt(bookData.stock),
@@ -32,10 +36,12 @@ function AddBook() {
         await axios.put(`${API}/api/books/${existingBook._id}`, updatedBook);
         alert("Book stock updated successfully!");
       } else {
+        // If book is new, add it to the database
         await axios.post(`${API}/api/books`, bookData);
         alert("New book added successfully!");
       }
 
+      // Reset form fields after submission
       setBookData({
         bookName: "",
         isbn: "",
@@ -45,6 +51,7 @@ function AddBook() {
         imageUrl: "",
       });
     } catch (error) {
+      // Handle any errors during book addition
       console.error("Error:", error);
       alert("Error adding/updating book");
     }
@@ -61,6 +68,7 @@ function AddBook() {
 
         <div className="form-container">
           <form onSubmit={handleSubmit}>
+            {/* Book Name Input */}
             <div className="form-field">
               <label>Book Name</label>
               <input
@@ -74,6 +82,7 @@ function AddBook() {
               />
             </div>
 
+            {/* ISBN Input */}
             <div className="form-field">
               <label>ISBN</label>
               <input
@@ -87,6 +96,7 @@ function AddBook() {
               />
             </div>
 
+            {/* Author Input */}
             <div className="form-field">
               <label>Author</label>
               <input
@@ -100,6 +110,7 @@ function AddBook() {
               />
             </div>
 
+            {/* Genre Input */}
             <div className="form-field">
               <label>Genre</label>
               <input
@@ -113,6 +124,7 @@ function AddBook() {
               />
             </div>
 
+            {/* Stock Input */}
             <div className="form-field">
               <label>Stock</label>
               <input
@@ -126,6 +138,7 @@ function AddBook() {
               />
             </div>
 
+            {/* Image URL Input */}
             <div className="form-field">
               <label>Image URL</label>
               <input
@@ -137,7 +150,7 @@ function AddBook() {
                 placeholder="Enter image URL"
               />
             </div>
-
+            {/* Submit Button */}
             <button type="submit" className="submit-button">
               Add Book
             </button>

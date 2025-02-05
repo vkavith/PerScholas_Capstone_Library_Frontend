@@ -5,10 +5,12 @@ import "./BookCollection.css";
 import API from "../api/config";
 
 function Collection() {
-  const [books, setBooks] = useState([]);
-  const [searchBook, setSearchBook] = useState("");
-  const [searchResult, setSearchResult] = useState(null);
-  
+  // State to manage book collection and search functionality
+  const [books, setBooks] = useState([]); // Stores all books
+  const [searchBook, setSearchBook] = useState(""); // Stores search input
+  const [searchResult, setSearchResult] = useState(null); // Stores search result
+
+  // Fetch all books
   useEffect(() => {
     const fetchBooks = async () => {
       const res = await axios.get(
@@ -21,10 +23,12 @@ function Collection() {
     fetchBooks();
   }, []);
 
+  // Update search input state
   const handleSearchChange = (e) => {
     setSearchBook(e.target.value);
   };
 
+  // Perform book search
   const handleSearch = async () => {
     try {
       const res = await axios.get(
@@ -40,6 +44,7 @@ function Collection() {
     }
   };
 
+  // Filter books based on search input
   const filteredBook = books.filter((book) => {
     const matchQuery = book.bookName
       .toLowerCase()
@@ -53,6 +58,8 @@ function Collection() {
       <Sidebar />
       <div className="collection-content">
         <h1>Book Collection</h1>
+
+        {/* Search input field with search button */}
         <div className="search-container">
           <input
             type="text"
@@ -62,7 +69,9 @@ function Collection() {
           />
         </div>
 
+        {/* Conditional rendering for search results or book list */}
         {searchResult ? (
+          // Display single search result
           <div className="books-grid">
             <h2>Search Result</h2>
             <div className="book-card">
@@ -75,6 +84,7 @@ function Collection() {
             </div>
           </div>
         ) : (
+          // Display filtered book list
           <div className="books-grid">
             {filteredBook.map((book) => (
               <div key={book._id} className="book-card">
