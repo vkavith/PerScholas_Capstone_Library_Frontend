@@ -1,3 +1,4 @@
+// ReturnBooks component for managing book returns
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
@@ -14,6 +15,7 @@ function ReturnBooks() {
   const [bookInfo, setBookInfo] = useState(null);
   const [returnDate, setReturnDate] = useState("");
 
+  // Clear messages after timeout
   useEffect(() => {
     if (message) {
       const timer = setTimeout(() => {
@@ -36,6 +38,7 @@ function ReturnBooks() {
     fetchUsers();
   }, []);
 
+  // Handle user selection and load their issued books
   const handleUserInfo = async (e) => {
     const userId = e.target.value;
     setSelectedUser(userId);
@@ -63,6 +66,7 @@ function ReturnBooks() {
     }
   };
 
+  // Update book details when transaction selected
   const handleTransactionInfo = async (e) => {
     const transactionId = e.target.value;
 
@@ -86,6 +90,7 @@ function ReturnBooks() {
     }
   };
 
+  // Process book return
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -141,7 +146,9 @@ function ReturnBooks() {
       <div className="return-content">
         <h1>Return Book</h1>
 
+        {/* Return book form */}
         <form onSubmit={handleSubmit} className="return-form">
+          {/* User selection */}
           <div className="form-group">
             <label>Select User:</label>
             <select value={selectedUser} onChange={handleUserInfo} required>
@@ -154,6 +161,7 @@ function ReturnBooks() {
             </select>
           </div>
 
+          {/* Selected user details */}
           {userInfo && (
             <div className="user-details">
               <h3>User Information</h3>
@@ -162,6 +170,7 @@ function ReturnBooks() {
             </div>
           )}
 
+          {/* Book selection if user has issued books */}
           {issuedBooks.length > 0 && (
             <div className="form-group">
               <label>Select Book to Return:</label>
@@ -179,7 +188,7 @@ function ReturnBooks() {
               </select>
             </div>
           )}
-
+           {/* Selected book details */}
           {bookInfo && (
             <div className="book-details">
               <h3>Book Information</h3>
@@ -192,6 +201,7 @@ function ReturnBooks() {
             </div>
           )}
 
+          {/* Return date input */}
           {selectedTransaction && (
             <div className="form-group">
               <label>Return Date:</label>
@@ -204,6 +214,7 @@ function ReturnBooks() {
             </div>
           )}
 
+           {/* Status message */}
           {message && (
             <div
               className={`message ${
@@ -213,7 +224,7 @@ function ReturnBooks() {
               {message}
             </div>
           )}
-
+          {/* Submit button */}
           <button type="submit" disabled={!selectedTransaction || !returnDate}>
             Return Book
           </button>

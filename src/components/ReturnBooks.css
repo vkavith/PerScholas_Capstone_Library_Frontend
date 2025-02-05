@@ -3,7 +3,7 @@
   min-height: 100vh;
   background-color: #f4f4f4;
 }
-
+/* Main content container */
 .return-content {
   flex-grow: 1;
   padding: 20px;
@@ -12,7 +12,7 @@
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+/* Form layout */
 .return-form {
   display: flex;
   flex-direction: column;
@@ -22,14 +22,14 @@
 .form-group {
   margin-bottom: 15px;
 }
-
+/* Form labels */
 .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #333;
 }
-
+/* Form inputs */
 .form-group select, 
 .form-group input[type="date"] {
   width: 100%;
@@ -38,7 +38,7 @@
   border-radius: 4px;
   font-size: 16px;
 }
-
+/* Info cards */
 .user-details, 
 .book-details {
   background-color: #f9f9f9;
@@ -46,7 +46,7 @@
   border-radius: 4px;
   margin-bottom: 15px;
 }
-
+/* Card headers */
 .user-details h3, 
 .book-details h3 {
   margin-top: 0;
@@ -60,7 +60,7 @@
   margin: 5px 0;
   color: #666;
 }
-
+/* Status messages */
 .message {
   padding: 10px;
   border-radius: 4px;
@@ -79,7 +79,7 @@
   color: #a94442;
   border: 1px solid #ebccd1;
 }
-
+/* Submit button */
 button {
   background-color: #007bff;
   color: white;
@@ -107,7 +107,7 @@ button:disabled {
   background-color: #f9f9f9;
   border-radius: 4px;
 }
-
+/* Responsive styles */
 @media (max-width: 600px) {
   .return-content {
     padding: 10px;
