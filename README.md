@@ -80,7 +80,7 @@ Digital Library Management System to have a seamless interaction to access the L
 
 + The Library Management Application is a web-based application that allows librarians to manage books, track borrowing and returning of books, manage user accounts. The system includes functionalities such as:
 
-+ Book Management: Add, update, and delete books from the inventory.
++ Book Management: Add, update, and delete books, select books from the inventory.
 
 + Transaction Management: Handle the borrowing and returning of books.
 
@@ -120,6 +120,59 @@ Digital Library Management System to have a seamless interaction to access the L
 - 🗃️ Database: MongoDB - NoSQL database management, schema design, data handling.
 - 🔄 Version Control: Git
 - ☁️ Deployment: Render
+
+
+# How to Run the Project
+
+
+
+1. Clone the Repository:
+
+git clone https://github.com/vkavith/PerScholas_Capstone_Library_Backend.git
+
+2. Navigate to the Project Directory for Backend
+
+cd PerScholas_Capstone_Library_Backend
+
+3. Install Dependencies:
+
+- npm install
+- npm init -y
+- npm i dotenv express mongoose mongodb
+- npm install express cors 
+
+4. Set Up the Environment Variables: Create a .env file in the root directory and add your MongoDB connection string and other environment variables.
+
+- MONGO_URI=your_mongodb_uri
+- PORT = port_no
+
+5. Run the Backend Server:
+
+- npm start
+
+6. Clone the Repository:
+
+    git clone https://github.com/vkavith/PerScholas_Capstone_Library_Frontend.git
+
+7. Navigate to the Project Directory for Frontend:
+
+   cd PerScholas_Capstone_Library_Frontend
+
+8. Install dependencies for front-end
+
+   npm install react-router-dom
+   
+   npm i axios
+
+8. Run the Frontend: Open another terminal window and start the React development server:
+
+   npm run dev
+
+9. Access the Application: Open your web browser and go to http://localhost:5173
+
+10. I have deployed in render, the link
+    
+    https://perscholas-capstone-library-frontend.onrender.com/
 
 
 
