@@ -177,17 +177,32 @@ cd PerScholas_Capstone_Library_Backend
 
 # API Endpoints
 
-| Method	    | Endpoint                              | Description
-| --------   | --------------------------            ------------------------
 
-| GET        | http://localhost:5000/api/books       |Get all books
-| GET        | http://localhost:5000/api/books/      |Get one book
-|              search?q=${searchQuery}               
-| PUT        | http://localhost:5000/api/books/      |Change in book info
-               ${selectedBook._id}
-| POST       | http://localhost:5000/api/books       |Post 1 book
-| DELETE     | http://localhost:5000/api/books/      |Delete a complete book
-               ${selectedBook._id}
-| GET        | http://localhost:5000/api/users       |Get all users
-| POST       | http://localhost:5000/                |Get transactions 
-               api/issuetransactions
+Method - GET 
+       - http://localhost:5000/api/books 
+       - Get all books
+
+Method - GET 
+       - http://localhost:5000/api/books/search?q=${searchQuery}
+       - Get one book
+
+Method - PUT
+       - http://localhost:5000/api/books/${selectedBook._id}
+       - Edit book info 
+
+Method - POST
+       - http://localhost:5000/api/books
+       - Post 1 book
+
+Method - DELETE
+       - http://localhost:5000/api/books/${selectedBook._id}
+       - Delete a complete book
+
+Method - GET
+       - http://localhost:5000/api/users
+       - Get all users
+       
+Method - POST
+       - http://localhost:5000/api/issuetransactions
+       - GET transactions
+
