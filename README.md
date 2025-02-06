@@ -204,5 +204,14 @@ Method - GET
        
 Method - POST
        - http://localhost:5000/api/issuetransactions
-       - GET transactions
+       - post transactions to mongo db
+
+METHOD - GET
+       - http://localhost:5000/api/issuetransactions
+       - get transactions from Mongo DB
+
+METHOD - POST
+       - http://localhost:5000/api/returntransactions
+       - Post return transactions to Mongo DB
+
 
