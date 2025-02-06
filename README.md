@@ -59,11 +59,11 @@ Digital Library Management System to have a seamless interaction to access the L
    + Delete Book
       + Delete a BookName from the Library Catalog
    + Issue Book
-      + Issue Book to a User, display error message if the same book issued again. Book stock decreased to 1 after issue
+      + Issue Book to a User, display error message if the same book issued again. Book stock decreased by 1 after issue
    + Return Book
-      + Return Book to the Library Catalog from the User, Book stock increased to 1 after return      
+      + Return Book to the Library Catalog from the User, Book stock increased by 1 after return      
    + Collection
-      + Display entire books from the Library Catalog. User has the option to search for 1 book
+      + Display entire books from the Library Catalog. User has the option to search for 1 book at a time
  
 ## Do you have a third party API?
   + Google Books API was used to get the Book Images URL, also to refresh the Book Images URL from Google Books API in the code.
@@ -74,5 +74,54 @@ Digital Library Management System to have a seamless interaction to access the L
 
 ## https://github.com/vkavith/PerScholas_Capstone_Library_Backend
 
-  
+## Overview 
+
++ MERN-Digital Library is a comprehensive web application built using the MERN stack (MongoDB, Express.js, React and Node.js) that allows users to efficiently manage and operate a books collection in Library Catalog. This project incorporates essential CRUD (Create, Read, Update, Delete) operations to handle books, book transactions, book details and other relevant data within the digital library inventory.
+
++ The Library Management Application is a web-based application that allows librarians to manage books, track borrowing and returning of books, manage user accounts. The system includes functionalities such as:
+
++ Book Management: Add, update, and delete books from the inventory.
+
++ Transaction Management: Handle the borrowing and returning of books.
+
++ Search and Filtering: Search for books and users, filter results based on various criteria.
+
+1. 📖 Book Management:
+
+- Create, read, update and delete books in the app
+
+- Associate books with authors, isbn, category, stock, bookimage
+
+2. 👨‍💼 Author Management:
+- Link authors to their respective books for easy navigation.
+
+3. 📚 Genre Management:
+- Add, edit, and delete categories, bookStock as needed.
+
+4. 📚 Book Transaction Management
+
+- Issue Book from Library Catalog to User
+- Return Book from User to Library Catalog
+
+5. 🌟 User-Friendly Interface:
+- Utilize React.js to create a responsive and user-friendly front-end.
+- Intuitive and visually appealing design for a smooth user experience.
+
+6. 🚀 Scalability and Performance:
+- Prepare the application for potential scaling by using best practices.
+- As application gets complex, tune database queries and routes
+- Implement User Authentication
+
+# Technologies Used
+
+- 🌐 Front-end: React.js, HTML/CSS, JavaScript - Front-end development, responsive design, user experience enhancements. Components, state management, hooks,
+- ⚙️ Back-end: Node.js, Express.js - Server-side development, API creation, MongoDB integration.
+- 🗃️ Database: MongoDB - NoSQL database management, schema design, data handling.
+- 🔄 Version Control: Git
+- ☁️ Deployment: Render
+
+
+
+
+
 
