@@ -161,7 +161,7 @@ cd PerScholas_Capstone_Library_Backend
 8. Install dependencies for front-end
 
    npm install react-router-dom
-   
+
    npm i axios
 
 8. Run the Frontend: Open another terminal window and start the React development server:
@@ -175,7 +175,19 @@ cd PerScholas_Capstone_Library_Backend
     https://perscholas-capstone-library-frontend.onrender.com/
 
 
+# API Endpoints
 
+| Method	    | Endpoint                              | Description
+| --------   | --------------------------            ------------------------
 
-
-
+| GET        | http://localhost:5000/api/books       |Get all books
+| GET        | http://localhost:5000/api/books/      |Get one book
+|              search?q=${searchQuery}               
+| PUT        | http://localhost:5000/api/books/      |Change in book info
+               ${selectedBook._id}
+| POST       | http://localhost:5000/api/books       |Post 1 book
+| DELETE     | http://localhost:5000/api/books/      |Delete a complete book
+               ${selectedBook._id}
+| GET        | http://localhost:5000/api/users       |Get all users
+| POST       | http://localhost:5000/                |Get transactions 
+               api/issuetransactions
