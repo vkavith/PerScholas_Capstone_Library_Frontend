@@ -214,4 +214,13 @@ METHOD - POST
        - http://localhost:5000/api/returntransactions
        - Post return transactions to Mongo DB
 
+Seed data for books           
++ localhost:5000/api/seed/books
+
+Seed data for users
++ localhost:5000/api/seed/users
+
+Seed data for transactions
++ localhost:5000/api/seed/transactions
+
 
