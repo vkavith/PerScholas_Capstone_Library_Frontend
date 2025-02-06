@@ -107,10 +107,11 @@ Digital Library Management System to have a seamless interaction to access the L
 - Utilize React.js to create a responsive and user-friendly front-end.
 - Intuitive and visually appealing design for a smooth user experience.
 
-6. 🚀 Scalability and Performance:
+6. 🚀 Scalability and Performance(To-Do):
 - Prepare the application for potential scaling by using best practices.
 - As application gets complex, tune database queries and routes
 - Implement User Authentication
+- Use External API for Book Reviews
 
 # Technologies Used
 
